@@ -1,1 +1,115 @@
-//
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>标题</title>
+    <style>
+        /*选择器, 盒子模型*/
+        * {/*清除默认内外样式*/
+            padding: 0;
+            margin: 0;
+        }
+        ul {
+            width: 800px;
+            height: 200px;
+            background: aqua;
+            display: flex;/*弹性容器*/
+            flex-wrap: wrap;/*自动换行显示*/
+            flex-direction: column;/*修改主轴方向为垂直从上到下*/
+            justify-content: space-between;/*按两边排列*/
+            align-items: center;/*沿侧轴居中排列*/
+        }
+        ul>li{/*不包括子标签里面的标签*/
+            width: 10vw;
+            height: 10vh;
+            background-color: aquamarine;
+            padding: 3vh;/*内边距*/
+            border: 1vh;/*边框线*/
+            border-radius: 1vh;/*圆角*/
+            flex: 1;/*修改弹性伸缩比*/
+            align-self:flex-start;/*修改各自盒子的侧轴位置*/
+            box-sizing: border-box;/*内减模式*/
+            box-shadow:1vh 1vh 1vh rgba(255， 255， 255， 0.5) inset;/*X轴偏移量 Y轴偏移量 模糊半径 扩散半径 颜色 内外阴影*/
+        }
+        body h1 {/*包括子标签里面的标签*/
+            width: 100vw;
+        } 
+        .类名 {/*类名优先于标签名，会将相同属性覆盖，将不同属性继承*/
+            width: 10vw;
+            height: 10vh;
+            margin: 0 auto;/*外边距*/
+        }
+        div.类名 {/*交集*/
+            background: #2dc1e6 url(#) no-repeat center bottom/cover;/*背景色 背景图 背景图平铺方式 背景图位置/背景图缩放*/
+            background-image: linear-gradient(45deg, #2dc1e6 30%, green );
+            position: fixed;/*相对于浏览器定位，脱标*/
+            top: 0;
+            right: 0;
+            transition: all 1.5s;/*t添加过渡效果*/
+            transform-style: preserve-3d;/*设置为3d盒子，子元素将处在3D空间*/
+            perspective: 1000px;/*添加视距*/
+        } 
+        p,a {/*并集*/
+            font: italic bold 30px/2 楷体;/*倾斜 加粗 大小/行高 字体*/
+            text-indent: 2em;/*缩进两个字符*/
+            text-align: center;/*居中显示*/
+            text-decoration: underline;/*添加下划线*/
+            color: forestgreen;
+        } 
+        div:hover {/*鼠标悬停状态*/
+            transform: scale3d(2，2，2);
+            opacity: 0;/*设置透明效果*/
+        } 
+        @keyframes rotate{/*定义动画*/
+            100% {transform:rotate(180deg);}
+        }
+        li:nth-child(-n+3) {/*按序号或公式查找元素*/
+            animation: rotate 2s linear 0s infinite alternate forwards;/*名称 时长 匀速 延迟 无限循环 反向 完成态*/
+        }
+    </style>
+</head>
+<body>
+    <div class="类名"></div>
+    <h1 class="类名">一级标题</h1>
+    <p>空格&nbsp;大于&gt;小于&lt;</p>
+    <a href="#">超链接</a>
+    <br><!--换行-->
+    <hr><!--水平线-->
+    <img src="">
+    <audio src="" controls loop autoplay>链接 控制面板 循环播放 自动播放</audio>
+    <video src="" muted>静音播放</video>
+    <ul><!--unorder list无序列表, order list有序列表-->
+        <li>list列表</li>
+        <li>list列表</li>
+    </ul>
+    <table border="1"><!--边框线宽-->
+        <tr><!--第一行-->
+            <th>表头一</th>
+            <th>表头二</th>
+            <th>表头三</th>
+        </tr>
+        <tr><!--第二行-->
+            <td rowspan="2">第一列</td>
+            <td colspan="2">第二三列</td>
+        </tr>        
+        <tr><!--第三行-->
+            <td>第二列</td>
+            <td>第三列</td>
+        </tr>
+    </table>
+    <form action="提交地址">
+        <input type="text" placeholder="手机号/用户名">
+        <input type="password" placeholder="密码">
+        <button type="submit">提交</button>
+        <button type="reset">重置</button>
+    </form>
+    单选框：<label></label><input type="radio" name="性别" checked>男</label><!--默认选中-->
+    多选框：<input type="checkbox">
+    上传文件：<input type="file" multiple><!--上传多个文件-->
+    <select><!--下拉菜单-->
+        <option selected>默认选项</option>
+    </select>
+    <textarea>请输入评论</textarea>
+</body>
+</html>
