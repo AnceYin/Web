@@ -36,6 +36,8 @@
         } 
         .类名 {/*类名优先于标签名，会将相同属性覆盖，将不同属性继承*/
             width: 10vw;
+        }
+        #id {/*id优先于类名*/
             height: 10vh;
             margin: 0 auto;/*外边距*/
         }
@@ -69,7 +71,7 @@
     </style>
 </head>
 <body>
-    <div class="类名"></div>
+    <div class="类名" id="id"></div>
     <h1 class="类名">一级标题</h1>
     <p>空格&nbsp;大于&gt;小于&lt;</p>
     <a href="#">超链接</a>
