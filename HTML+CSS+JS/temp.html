@@ -116,11 +116,11 @@
         // 捕获用户操作
         const btn = document.querySelectorAll("button")//获取所有元素组成的伪数组
         //鼠标点击，经过，离开，获得焦点，失去焦点，键盘按下，键盘抬起，用户输入，详细信息放在e里
-        btn[0].addEventListener("click"，function(e){
+        btn[0]。addEventListener("click"，function(e){
         // 修改界面
         const box = document.querySelector("div")//获取选择器匹配的第一个元素
-        box.dataset.id = "box"//修改自定义属性
-        box.classList.toggle("box")//修改标准属性中的class。用于切换样式，有就删掉，没有就加上 
+        box.dataset。id = "box"//修改自定义属性
+        box.classList。toggle("类名")//修改标准属性中的class。用于切换样式，有就删掉，没有就加上 
         })
     </script>
 </body>
